@@ -1,0 +1,22 @@
+{
+  "name": "stable-diffusion-cjs",
+  "version": "1.0.2",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ai",
+    "stable-diffusion",
+    "stable-diffusion-cjs",
+    "es",
+    "image"
+  ],
+  "author": "Jake Cash",
+  "license": "ISC",
+  "dependencies": {
+    "websocket": "^1.0.34",
+    "ws": "^8.12.0"
+  }
+}
