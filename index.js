@@ -14,7 +14,7 @@ function generateHash() {
     }
 }
 
-let enhancements =  " realistic graphics, epic dark cinematic, 4k, vibrant lighting, smooth edges, 3d, not blurry, clear, cool vibrant background"
+let enhancements =  " realistic graphics, epic dark cinematic, 4k, vibrant lighting, smooth edges, 3d, not blurry, clear, cool vibrant background, art style of midjourney"
 
 let enhanced = true
 
