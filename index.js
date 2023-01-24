@@ -16,14 +16,12 @@ function generateHash() {
 
 let enhancements =  " realistic graphics, epic dark cinematic, 4k, vibrant lighting, smooth edges, 3d, not blurry, clear, cool vibrant background, art style of midjourney"
 
-let enhanced = true
-
 function generate(prompta, cb) {
     const client = new WebSocket(API_URL);
     const hash = generateHash()
     let prompt = prompta
-    if (enhanced){
-        prompt = prompta + enhancements
+    if (prompt.endsWith('{enhanced}')) {
+        prompt = prompt.replace('{enhanced}', enhancements)
     }
     let tmr = setTimeout(() => {
         client.close()
