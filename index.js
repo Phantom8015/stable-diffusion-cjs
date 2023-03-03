@@ -14,7 +14,7 @@ function generateHash() {
     }
 }
 
-let enhancements =  " realistic, smoothening, cinematic lighting."
+let enhancements =  " realistic, smoothening, epic cinematic lighting, dark villanous looking background."
 
 function generate(prompta, cb) {
     const client = new WebSocket(API_URL);
