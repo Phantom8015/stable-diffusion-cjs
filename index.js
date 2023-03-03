@@ -14,7 +14,7 @@ function generateHash() {
     }
 }
 
-let enhancements =  " realistic graphics, epic dark cinematic, 4k, vibrant lighting, smooth edges, 3d, not blurry, clear, cool vibrant background, art style of midjourney"
+let enhancements =  " realistic, smoothening, cinematic lighting."
 
 function generate(prompta, cb) {
     const client = new WebSocket(API_URL);
