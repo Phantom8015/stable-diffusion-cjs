@@ -11,7 +11,7 @@ npm install stable-diffusion-cjs
 ## Usage
 
 ```js
-const { generate } = require('stable-diffusio-cjs'); 
+const { generate } = require('stable-diffusion-cjs'); 
 
 const prompt = "A cat"; 
 
