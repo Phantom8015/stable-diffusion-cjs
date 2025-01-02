@@ -11,18 +11,26 @@ npm install stable-diffusion-cjs
 ## Usage
 
 ```js
-const { generate } = require('stable-diffusion-cjs'); 
+const { generate } = require('stable-diffusion-cjs');
+const fs = require('fs'); 
 
-const prompt = "A cat"; 
+const prompt = "A cat";
 
-generate(prompt, (response) => {
-    if (response.error) {
-        console.log("There was an error generating the image.");
-    } else {
-        console.log("Image generated successfully!");
-        console.log(`Image saved at: ${response.results}`);
-    }
-});
+generate(prompt)
+    .then((response) => {
+        if (response.error) {
+            console.log("There was an error generating the image.");
+        } else {
+            const filePath = './image.jpg';
+            fs.writeFileSync(filePath, response); 
+            console.log("Image generated successfully!");
+            console.log(`Image saved at: ${filePath}`);
+        }
+    })
+    .catch((error) => {
+        console.error('Error:', error);
+    });
+
 ```
 A trick to get better images is to add: 
 ```
