@@ -11,27 +11,18 @@ npm install stable-diffusion-cjs
 ## Usage
 
 ```js
-const AI = require("stable-diffusion-cjs")
-const fs = require("fs")
+const { generate } = require('./index.js'); 
 
-let prompt = "A cat"
+const prompt = "A cat"; 
 
- AI.generate(prompt, async (result) => {
-    if (result.error) {
-        console.log(result.error)
-        return;
+generate(prompt, (response) => {
+    if (response.error) {
+        console.log("There was an error generating the image.");
+    } else {
+        console.log("Image generated successfully!");
+        console.log(`Image saved at: ${response.results}`);
     }
-    try {
-        for (let i = 0; i < result.results.length; i++) {
-            let data = result.results[i].split(",")[1]
-            const buffer = Buffer.from(data, "base64")
-            const filename = `image_${i + 1}.png`
-            fs.writeFileSync(filename, buffer)
-        }
-    } catch (e) {
-        console.log(e)
-    }
-})
+});
 ```
 A trick to get better images is to add: 
 ```
@@ -41,7 +32,7 @@ at the end of your prompt.
 
 ## Output
 
-![A cat](https://media.discordapp.net/attachments/1044317518975733810/1066794811597799424/image_3.png?width=384&height=384)
+![A cat](https://media.discordapp.net/attachments/1301965748025036915/1324488070904549457/image.png?ex=67785523&is=677703a3&hm=303a6f38b2c3cc928ced00488cdd514c2e2879c653fabe9ed288090dd390cbfa&=&format=webp&quality=lossless&width=525&height=525)
 
 
 
